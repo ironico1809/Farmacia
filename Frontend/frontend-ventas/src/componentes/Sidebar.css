@@ -1,0 +1,93 @@
+/* Sidebar animada y moderna */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 100vh;
+  background: linear-gradient(135deg, #3d4042 0%, #3d3d3f 100%);
+  color: #fff;
+  box-shadow: 2px 0 16px 0 rgba(0,0,0,0.08);
+  z-index: 1002;
+  transform: translateX(-100%) scaleX(0.85);
+  opacity: 0.7;
+  transition: transform 0.35s cubic-bezier(.77,0,.18,1), opacity 0.25s cubic-bezier(.77,0,.18,1);
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  overflow-y: auto;
+  will-change: transform, opacity; /* Para forzar el repintado y suavizar la animación */
+}
+.sidebar.sidebar-open {
+  transform: translateX(0) scaleX(1);
+  opacity: 1;
+}
+.sidebar,
+.sidebar.sidebar-open {
+  transition: transform 0.35s cubic-bezier(.77,0,.18,1), opacity 0.35s cubic-bezier(.77,0,.18,1); /* Asegura que la transición se aplique siempre */
+}
+.brand-section {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 1.2rem 1.2rem 0.7rem 1.2rem;
+}
+.brand-logo {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+}
+.brand-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #fff;
+}
+.user-panel {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.7rem 1.2rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+.user-name {
+  font-weight: 600;
+  color: #fff;
+  font-size: 1rem;
+}
+.sidebar-nav {
+  margin-top: 1.2rem;
+}
+.sidebar-group {
+  margin-bottom: 0.2rem;
+}
+.sidebar-link {
+  cursor: pointer;
+  border-radius: 12px;
+  transition: background 0.18s;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+.sidebar-link:hover {
+  background: rgba(255,255,255,0.08);
+  color: #ffe082;
+}
+.sidebar-link-active {
+  background: rgba(34,197,94,0.18);
+  color: #22c55e !important;
+  font-weight: 700;
+  box-shadow: 0 2px 8px 0 rgba(34,197,94,0.08);
+}
+@media (max-width: 700px) {
+  .sidebar {
+    width: 80vw;
+    min-width: 0;
+    max-width: 95vw;
+  }
+}
+
+/* Mejora el rendimiento y la suavidad de la animación */
