@@ -1,0 +1,151 @@
+/* ValidarReceta.css */
+.validar-receta-container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
+}
+
+.validar-receta-container h2 {
+  margin-bottom: 1.2rem;
+  color: #2563eb;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+.alerta-proceso {
+  background: #e3f2fd;
+  color: #1976d2;
+  padding: 0.8rem 1.2rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  font-size: 1.08rem;
+}
+
+.card-validar {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.form-row {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 1.1rem;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 400;
+  margin-bottom: 0.3rem;
+  color: #444;
+}
+
+.form-control {
+  padding: 0.4rem 0.9rem 0.3rem 0.9rem;
+  border: 1px solid #cfd8dc;
+  border-radius: 5px;
+  font-size: 1rem;
+  background: #fff;
+  min-height: 2.7rem;
+  text-align: left;
+  font-weight: 400;
+}
+
+.mensaje-validacion {
+  margin-bottom: 1.1rem;
+  color: #e74c3c;
+  font-weight: 700;
+  font-size: 1.08rem;
+}
+
+.datos-receta {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.2rem 1rem 1.2rem 1rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.medicamentos-section h4 {
+  margin: 1.2rem 0 0.7rem 0;
+  color: #1976d2;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.2rem;
+}
+.table th, .table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: left;
+}
+.table th {
+  background: #e3f2fd;
+  font-weight: 700;
+}
+.table tr.controlled {
+  background: #ffebee;
+}
+
+.validation-section {
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 1.2rem 1rem 1.2rem 1rem;
+  margin-top: 1.2rem;
+}
+
+.validation-field label {
+  font-weight: 400;
+  color: #444;
+}
+
+.validation-field textarea {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #cfd8dc;
+  padding: 0.7rem 0.9rem;
+  font-size: 1rem;
+  margin-top: 0.3rem;
+}
+
+.action-buttons {
+  margin-top: 1.2rem;
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.btn {
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-primary { background: #1ABC9C; color: #fff; }
+.btn-success { background: #2ECC71; color: #fff; }
+.btn-danger { background: #E74C3C; color: #fff; }
+.btn-warning { background: #F1C40F; color: #fff; }
+
+@media (max-width: 800px) {
+  .validar-receta-container {
+    padding: 1rem 0.5rem;
+  }
+  .form-row {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

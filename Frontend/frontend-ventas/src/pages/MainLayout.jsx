@@ -8,6 +8,8 @@ import RegistrarVenta from './RegistrarVenta';
 import RegistrarProducto from './RegistrarProducto';
 import GestionarProductos from './GestionarProductos';
 import GestionarUsuarios from './GestionarUsuarios';
+import ValidarReceta from './ValidarReceta';
+import GestionarClientes from './GestionarClientes';
 import '../App.css';
 
 const MainLayout = () => {
@@ -27,6 +29,8 @@ const MainLayout = () => {
           <Route path="/inventario/registrar-producto" element={<RegistrarProducto />} />
           <Route path="/inventario/gestionar-productos" element={<GestionarProductos />} />
           <Route path="/administracion/gestionar-usuarios" element={<GestionarUsuarios />} />
+          <Route path="/clientes/gestionar" element={<GestionarClientes />} />
+          <Route path="/recetas/validar" element={<ValidarReceta />} />
           <Route path="*" element={<DashboardMain />} />
         </Routes>
       </div>

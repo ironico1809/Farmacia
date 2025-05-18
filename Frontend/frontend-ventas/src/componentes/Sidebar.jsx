@@ -314,7 +314,9 @@ const Sidebar = ({ isOpen, onClose }) => {
             {/* Clientes */}
             <li className="sidebar-group">
               <div
-                className="sidebar-link"
+                className={`sidebar-link${
+                  location.pathname === '/clientes/gestionar' ? ' sidebar-link-active' : ''
+                }`}
                 style={{
                   display: 'flex',
                   alignItems: 'center',
@@ -326,14 +328,15 @@ const Sidebar = ({ isOpen, onClose }) => {
                   color: '#0ea5e9',
                   cursor: 'pointer',
                   transition: 'background 0.2s',
+                  background: location.pathname === '/clientes/gestionar' ? 'rgba(14,165,233,0.10)' : 'transparent',
+                  boxShadow: location.pathname === '/clientes/gestionar' ? '0 2px 8px #bae6fd' : 'none',
                 }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.background =
-                    'rgba(14,165,233,0.10)')
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.background = 'transparent')
-                }
+                onClick={() => {
+                  navigate('/clientes/gestionar');
+                  onClose && onClose();
+                }}
+                onMouseEnter={e => (e.currentTarget.style.background = 'rgba(14,165,233,0.13)')}
+                onMouseLeave={e => (e.currentTarget.style.background = location.pathname === '/clientes/gestionar' ? 'rgba(14,165,233,0.10)' : 'transparent')}
               >
                 <i
                   className="fa fa-user-friends"
@@ -471,13 +474,12 @@ const Sidebar = ({ isOpen, onClose }) => {
                   cursor: 'pointer',
                   transition: 'background 0.2s',
                 }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.background =
-                    'rgba(13,148,136,0.10)')
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.background = 'transparent')
-                }
+                onClick={() => {
+                  navigate('/recetas/validar');
+                  onClose && onClose();
+                }}
+                onMouseEnter={e => (e.currentTarget.style.background = 'rgba(13,148,136,0.10)')}
+                onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}
               >
                 <i
                   className="fa fa-file-medical"
