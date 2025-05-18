@@ -4,6 +4,7 @@
   background: #f8fafc;
   min-height: 100vh;
 }
+/* Barra superior */
 .top-bar {
   display: flex;
   align-items: center;
@@ -32,6 +33,7 @@
   margin-top: -1.2rem;
   position: absolute;
 }
+/* Estadísticas */
 .stats-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -101,6 +103,14 @@
 .stat-card.green {
   border-top: 4px solid #22c55e;
 }
+.stat-desc {
+  display: block;
+  margin-top: 0.3rem;
+  color: #64748b;
+  font-size: 0.98rem;
+  font-weight: 400;
+}
+/* Tabs */
 .tab-container {
   margin-bottom: 1.5rem;
 }
@@ -122,6 +132,7 @@
   background: #2563eb;
   color: #fff;
 }
+/* Tarjetas y formularios */
 .card {
   background: #fff;
   border-radius: 1.2rem;
@@ -196,6 +207,7 @@ input:focus, select:focus, textarea:focus {
   align-items: center;
   gap: 0.7rem;
 }
+/* Tabla de reportes */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -233,6 +245,7 @@ tbody td {
 }
 .actions .edit { color: #2563eb; }
 .actions .delete { color: #ef4444; }
+/* Gráfico */
 .chart-container {
   width: 100%;
   min-height: 180px;
@@ -246,14 +259,6 @@ tbody td {
   font-style: italic;
   opacity: 0.7;
 }
-.stat-desc {
-  display: block;
-  margin-top: 0.3rem;
-  color: #64748b;
-  font-size: 0.98rem;
-  font-weight: 400;
-}
-
 /* Modal de edición (scrollable) */
 .modal-overlay {
   position: fixed;

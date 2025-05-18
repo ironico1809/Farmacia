@@ -83,23 +83,19 @@ const statusBadge = {
   robo: 'status-extravio',
 };
 
+// Página principal de gestión de pérdidas
 export default function GestionarPerdidas() {
+  // Estados principales
   const [tab, setTab] = useState(0);
   const [productos, setProductos] = useState([...mockProductos]);
   const [perdidas, setPerdidas] = useState([...initialPerdidas]);
   const [form, setForm] = useState({
-    producto: '',
-    cantidad: 1,
-    lote: '',
-    tipo: '',
-    fecha: '',
-    valor: '',
-    motivo: '',
+    producto: '', cantidad: 1, lote: '', tipo: '', fecha: '', valor: '', motivo: '',
   });
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
   const [filtroPeriodo, setFiltroPeriodo] = useState('month');
-  // Estado para edición
+  // Estados para edición
   const [editModal, setEditModal] = useState(false);
   const [editData, setEditData] = useState(null);
 
@@ -109,23 +105,21 @@ export default function GestionarPerdidas() {
   const totalDanados = perdidas.filter(p => p.tipo_perdida === 'danado').reduce((acc, p) => acc + p.cantidad, 0);
   const valorTotal = perdidas.reduce((acc, p) => acc + p.valor_total, 0);
 
-  // Filtros de reporte (mock: solo periodo, no filtra realmente)
-  const perdidasFiltradas = perdidas; // Aquí puedes filtrar por periodo si conectas a backend
+  // Filtros de reporte (mock)
+  const perdidasFiltradas = perdidas;
 
-  // Handlers
+  // Handlers de pestañas y formularios
   const handleTab = idx => {
     setTab(idx);
     setError('');
     setSuccess('');
   };
-
   const handleFormChange = e => {
     const { name, value } = e.target;
     setForm(f => ({ ...f, [name]: value }));
     setError('');
     setSuccess('');
   };
-
   const handleProductoChange = e => {
     const id = parseInt(e.target.value);
     setForm(f => ({
@@ -136,12 +130,10 @@ export default function GestionarPerdidas() {
     setError('');
     setSuccess('');
   };
-
   const handleRegistrar = e => {
     e.preventDefault();
     setError('');
     setSuccess('');
-    // Validaciones
     if (!form.producto || !form.cantidad || !form.lote || !form.tipo || !form.fecha || !form.valor) {
       setError('Todos los campos son obligatorios.');
       return;
@@ -155,9 +147,7 @@ export default function GestionarPerdidas() {
       setError('La cantidad excede el stock disponible.');
       return;
     }
-    // Simular ajuste de stock
     setProductos(ps => ps.map(p => p.id === prod.id ? { ...p, stock: p.stock - parseInt(form.cantidad) } : p));
-    // Registrar pérdida
     const nuevaPerdida = {
       id: perdidas.length > 0 ? Math.max(...perdidas.map(p => p.id)) + 1 : 1,
       id_producto: prod.id,
@@ -174,32 +164,27 @@ export default function GestionarPerdidas() {
     setForm({ producto: '', cantidad: 1, lote: '', tipo: '', fecha: '', valor: '', motivo: '' });
     setSuccess('¡Pérdida registrada exitosamente!');
   };
-
-  // Acciones mock
+  // Eliminar registro
   const handleEliminar = id => {
     const perdida = perdidas.find(p => p.id === id);
     if (perdida) {
-      // Devolver stock si corresponde
       setProductos(ps => ps.map(p => p.id === perdida.id_producto ? { ...p, stock: p.stock + perdida.cantidad } : p));
     }
     setPerdidas(perdidas.filter(p => p.id !== id));
     setSuccess('Registro eliminado.');
     setError('');
   };
-
-  // Editar
+  // Editar registro
   const handleEditClick = perdida => {
     setEditData({ ...perdida });
     setEditModal(true);
     setError('');
     setSuccess('');
   };
-
   const handleEditChange = e => {
     const { name, value } = e.target;
     setEditData(ed => ({ ...ed, [name]: value }));
   };
-
   const handleEditProductoChange = e => {
     const id = parseInt(e.target.value);
     setEditData(ed => ({
@@ -209,10 +194,8 @@ export default function GestionarPerdidas() {
       valor_unitario: id ? productos.find(p => p.id === id)?.valor_unitario || '' : '',
     }));
   };
-
   const handleEditSave = e => {
     e.preventDefault();
-    // Validaciones
     if (!editData.id_producto || !editData.cantidad || !editData.lote || !editData.tipo_perdida || !editData.fecha || !editData.valor_unitario) {
       setError('Todos los campos son obligatorios.');
       return;
@@ -222,25 +205,21 @@ export default function GestionarPerdidas() {
       setError('Producto no encontrado.');
       return;
     }
-    // Calcular diferencia de cantidad para ajustar stock
     const original = perdidas.find(p => p.id === editData.id);
     const diff = parseInt(editData.cantidad) - original.cantidad;
     if (diff > 0 && diff > prod.stock) {
       setError('La cantidad excede el stock disponible.');
       return;
     }
-    // Ajustar stock
     setProductos(ps => ps.map(p => {
       if (p.id === prod.id) {
         return { ...p, stock: p.stock - diff };
       }
       if (p.id === original.id_producto && prod.id !== original.id_producto) {
-        // Si cambió de producto, devolver stock al original
         return { ...p, stock: p.stock + original.cantidad };
       }
       return p;
     }));
-    // Actualizar pérdida
     setPerdidas(ps => ps.map(p => p.id === editData.id ? {
       ...p,
       id_producto: parseInt(editData.id_producto),
@@ -258,7 +237,6 @@ export default function GestionarPerdidas() {
     setSuccess('Registro editado exitosamente.');
     setError('');
   };
-
   const handleEditCancel = () => {
     setEditModal(false);
     setEditData(null);

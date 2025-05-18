@@ -9,6 +9,8 @@ import GestionarUsuarios from './GestionarUsuarios';
 import ValidarReceta from './ValidarReceta';
 import GestionarClientes from './GestionarClientes';
 import GestionarPerdidas from './GestionarPerdidas';
+import GestionarProductos from './GestionarProductos';
+import RegistrarProducto from './RegistrarProducto';
 import '../App.css';
 
 const MainLayout = () => {
@@ -26,6 +28,8 @@ const MainLayout = () => {
         <Routes>
           <Route path="/ventas" element={<RegistrarVenta />} />
           <Route path="/inventario" element={<GestionarPerdidas />} />
+          <Route path="/inventario/gestionar-productos" element={<GestionarProductos />} />
+          <Route path="/inventario/registrar-producto" element={<RegistrarProducto />} />
           <Route path="/administracion/gestionar-usuarios" element={<GestionarUsuarios />} />
           <Route path="/clientes/gestionar" element={<GestionarClientes />} />
           <Route path="/recetas/validar" element={<ValidarReceta />} />
