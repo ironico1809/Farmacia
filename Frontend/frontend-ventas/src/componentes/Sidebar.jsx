@@ -198,7 +198,7 @@ const Sidebar = ({ isOpen, onClose }) => {
             {/* Compras */}
             <li className="sidebar-group">
               <div
-                className="sidebar-link"
+                className={`sidebar-link compras${location.pathname === '/compras' ? ' sidebar-link-active' : ''}`}
                 style={{
                   display: 'flex',
                   alignItems: 'center',
@@ -207,16 +207,22 @@ const Sidebar = ({ isOpen, onClose }) => {
                   borderRadius: '0.8rem',
                   fontWeight: 600,
                   fontSize: '1.08rem',
-                  color: '#f59e42',
+                  color: location.pathname === '/compras' ? '#f59e42' : '#f59e42',
                   cursor: 'pointer',
                   transition: 'background 0.2s',
+                  background: location.pathname === '/compras' ? 'rgba(245,158,66,0.10)' : 'transparent',
+                  boxShadow: location.pathname === '/compras' ? '0 2px 8px #fde68a' : 'none',
+                }}
+                onClick={() => {
+                  navigate('/compras');
+                  onClose && onClose();
                 }}
                 onMouseEnter={(e) =>
                   (e.currentTarget.style.background =
                     'rgba(245,158,66,0.10)')
                 }
                 onMouseLeave={(e) =>
-                  (e.currentTarget.style.background = 'transparent')
+                  (e.currentTarget.style.background = location.pathname === '/compras' ? 'rgba(245,158,66,0.10)' : 'transparent')
                 }
               >
                 <i

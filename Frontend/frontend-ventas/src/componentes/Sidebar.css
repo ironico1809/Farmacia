@@ -91,9 +91,59 @@
   color: #2563eb;
 }
 .sidebar-link-active {
+  color: inherit !important;
+  /* No forzar color blanco ni verde, cada opción usa su color propio */
+  background: #e5e7eb !important;
+  box-shadow: 0 2px 8px #cbd5e1;
+}
+
+/* Colores únicos para cada sección en estado activo */
+.sidebar-link.ventas.sidebar-link-active {
   color: #22c55e !important;
   background: rgba(34,197,94,0.10) !important;
   box-shadow: 0 2px 8px #bbf7d0;
+}
+.sidebar-link.compras.sidebar-link-active {
+  color: #f59e42 !important;
+  background: rgba(245,158,66,0.10) !important;
+  box-shadow: 0 2px 8px #fde68a;
+}
+.sidebar-link.clientes.sidebar-link-active {
+  color: #0ea5e9 !important;
+  background: rgba(14,165,233,0.10) !important;
+  box-shadow: 0 2px 8px #bae6fd;
+}
+.sidebar-link.admin.sidebar-link-active {
+  color: #a21caf !important;
+  background: #f3e8ff !important;
+  box-shadow: 0 2px 8px #e9d5ff;
+}
+.sidebar-link.reportes.sidebar-link-active {
+  color: #e11d48 !important;
+  background: rgba(225,29,72,0.10) !important;
+  box-shadow: 0 2px 8px #fecaca;
+}
+.sidebar-link.recetas.sidebar-link-active {
+  color: #0d9488 !important;
+  background: rgba(13,148,136,0.10) !important;
+  box-shadow: 0 2px 8px #99f6e4;
+}
+.sidebar-link.categorias.sidebar-link-active {
+  color: #fbbf24 !important;
+  background: rgba(251,191,36,0.10) !important;
+  box-shadow: 0 2px 8px #fde68a;
+}
+
+/* Subopciones de administración y productos */
+.submenu-admin .sidebar-link.sidebar-link-active {
+  color: #a21caf !important;
+  background: #f3e8ff !important;
+  box-shadow: 0 2px 8px #e9d5ff;
+}
+.submenu-categorias .sidebar-link.sidebar-link-active {
+  color: #fbbf24 !important;
+  background: rgba(251,191,36,0.10) !important;
+  box-shadow: 0 2px 8px #fde68a;
 }
 .submenu {
   background: #f1f5f9;
