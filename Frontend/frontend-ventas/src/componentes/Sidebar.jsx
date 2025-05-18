@@ -116,7 +116,9 @@ const Sidebar = ({ isOpen, onClose }) => {
           >
             <li className="sidebar-group">
               <div
-                className="sidebar-link sidebar-inventario"
+                className={`sidebar-link sidebar-inventario${
+                  location.pathname === '/inventario' ? ' sidebar-link-active' : ''
+                }`}
                 style={{
                   display: 'flex',
                   alignItems: 'center',
@@ -128,110 +130,23 @@ const Sidebar = ({ isOpen, onClose }) => {
                   fontSize: '1.08rem',
                   color: '#2563eb',
                   background:
-                    activeMenu === 'inventario'
+                    location.pathname === '/inventario'
                       ? 'rgba(37,99,235,0.08)'
                       : 'transparent',
                   boxShadow:
-                    activeMenu === 'inventario' ? '0 2px 8px #c7d2fe' : 'none',
+                    location.pathname === '/inventario' ? '0 2px 8px #c7d2fe' : 'none',
                   transition: 'background 0.2s, box-shadow 0.2s',
                 }}
-                onClick={() =>
-                  setActiveMenu(activeMenu === 'inventario' ? '' : 'inventario')
-                }
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.background =
-                    'rgba(37,99,235,0.10)')
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.background =
-                    activeMenu === 'inventario'
-                      ? 'rgba(37,99,235,0.08)'
-                      : 'transparent')
-                }
+                onClick={() => {
+                  navigate('/inventario');
+                  onClose && onClose();
+                }}
+                onMouseEnter={e => (e.currentTarget.style.background = 'rgba(37,99,235,0.10)')}
+                onMouseLeave={e => (e.currentTarget.style.background = location.pathname === '/inventario' ? 'rgba(37,99,235,0.08)' : 'transparent')}
               >
-                <i
-                  className="fa fa-warehouse"
-                  style={{ color: '#2563eb', fontSize: '1.25rem' }}
-                ></i>
+                <i className="fa fa-warehouse" style={{ color: '#2563eb', fontSize: '1.25rem' }}></i>
                 Inventario
-                <span className="arrow" style={{ marginLeft: 'auto' }}>
-                  <i
-                    className={`fa fa-chevron-${
-                      activeMenu === 'inventario' ? 'down' : 'right'
-                    }`}
-                  ></i>
-                </span>
               </div>
-              {activeMenu === 'inventario' && (
-                <ul
-                  className="submenu submenu-inventario"
-                  style={{
-                    background: '#e0e7ff',
-                    borderRadius: '0.7rem',
-                    margin: '0.2rem 0 0.5rem 0.7rem',
-                    boxShadow: '0 2px 8px #c7d2fe',
-                    padding: '0.4rem 0',
-                    animation: 'fadeIn 0.25s',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '0.1rem',
-                  }}
-                >
-                  <li>
-                    <div
-                      className={`sidebar-link sidebar-inventario${
-                        location.pathname === '/inventario/registrar-producto'
-                          ? ' sidebar-link-active'
-                          : ''
-                      }`}
-                      style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '0.7rem',
-                        padding: '0.7rem 1.5rem',
-                        cursor: 'pointer',
-                        borderRadius: '0.7rem',
-                        fontWeight: 500,
-                        fontSize: '1.04rem',
-                        color:
-                          location.pathname === '/inventario/registrar-producto'
-                            ? '#2563eb'
-                            : '#334155',
-                        background:
-                          location.pathname === '/inventario/registrar-producto'
-                            ? 'rgba(37,99,235,0.10)'
-                            : 'transparent',
-                        boxShadow:
-                          location.pathname === '/inventario/registrar-producto'
-                            ? '0 2px 8px #c7d2fe'
-                            : 'none',
-                        transition: 'background 0.2s, color 0.2s',
-                      }}
-                      onClick={() => {
-                        navigate('/inventario/registrar-producto');
-                        onClose && onClose();
-                      }}
-                      onMouseEnter={(e) =>
-                        (e.currentTarget.style.background =
-                          'rgba(37,99,235,0.13)')
-                      }
-                      onMouseLeave={(e) =>
-                        (e.currentTarget.style.background =
-                          location.pathname === '/inventario/registrar-producto'
-                            ? 'rgba(37,99,235,0.10)'
-                            : 'transparent')
-                      }
-                    >
-                      <i
-                        className="fa fa-plus-square"
-                        style={{ color: '#2563eb', fontSize: '1.1rem' }}
-                      ></i>
-                      Registrar Producto
-                    </div>
-                  </li>
-                  {/* Aquí puedes agregar más opciones de inventario si lo deseas */}
-                </ul>
-              )}
             </li>
             {/* Ventas/Facturación */}
             <li className="sidebar-group">
