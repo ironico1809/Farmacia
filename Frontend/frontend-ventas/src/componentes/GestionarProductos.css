@@ -1,0 +1,223 @@
+/* GestionarProductos.css - Estilo moderno y profesional para la gestión de productos */
+.gestionar-productos-container {
+  max-width: 1100px;
+  margin: 2.5rem auto 0 auto;
+  background: #f8fafc;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 32px 0 rgba(30,41,59,0.10);
+  padding: 2.5rem 2.5rem 2.5rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.2rem;
+}
+.gestionar-productos-title {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #2563eb;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  letter-spacing: 1px;
+}
+.gestionar-productos-bar {
+  display: flex;
+  flex-direction: row;
+  gap: 1.2rem;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 1.5rem auto;
+}
+.gestionar-productos-input {
+  flex: 1;
+  min-width: 220px;
+  padding: 0.7rem 1rem;
+  border-radius: 0.7rem;
+  border: 1.5px solid #cbd5e1;
+  background: #fff;
+  font-size: 1.08rem;
+  color: #334155;
+  transition: border 0.2s;
+}
+.gestionar-productos-input:focus {
+  border: 1.5px solid #2563eb;
+  outline: none;
+}
+.gestionar-productos-btn {
+  padding: 0.7rem 1.7rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-radius: 0.7rem;
+  border: none;
+  background: #2563eb;
+  color: #fff;
+  box-shadow: 0 2px 8px #c7d2fe;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  margin-left: 0.5rem;
+}
+.gestionar-productos-btn:hover {
+  background: #199e8e;
+  box-shadow: 0 4px 16px #a5b4fc;
+}
+.gestionar-productos-btn.editar {
+  background: #fbbf24;
+  color: #222;
+  margin-right: 0.5rem;
+}
+.gestionar-productos-btn.eliminar {
+  background: #e11d48;
+  color: #fff;
+  margin-right: 0.5rem;
+}
+.gestionar-productos-btn.inactivar {
+  background: #64748b;
+  color: #fff;
+  margin-right: 0.5rem;
+}
+.gestionar-productos-btn.activar {
+  background: #22c55e;
+  color: #fff;
+  margin-right: 0.5rem;
+}
+.gestionar-productos-btn.cancelar {
+  background: #e5e7eb;
+  color: #222;
+  margin-right: 0.5rem;
+}
+.gestionar-productos-btn.guardar {
+  background: #2563eb;
+  color: #fff;
+}
+.gestionar-productos-table-wrapper {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px #c7d2fe22;
+  padding: 1.5rem 1.2rem 1.5rem 1.2rem;
+  overflow-x: auto;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  min-width: 900px; /* Evita que el contenedor se reduzca demasiado */
+}
+.gestionar-productos-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.04rem;
+  background: #fff;
+  margin: 0 auto;
+  table-layout: fixed;
+  min-width: 900px; /* Asegura ancho mínimo estable */
+}
+.gestionar-productos-table th, .gestionar-productos-table td {
+  border: 1px solid #e5e7eb;
+  padding: 0.7rem 0.8rem;
+  text-align: center;
+}
+.gestionar-productos-table th {
+  background: #e0e7ff;
+  font-weight: 700;
+  color: #2563eb;
+  font-size: 1.07rem;
+}
+.gestionar-productos-table th:nth-child(1) { width: 60px; }
+.gestionar-productos-table th:nth-child(2) { width: 140px; }
+.gestionar-productos-table th:nth-child(3) { width: 180px; }
+.gestionar-productos-table th:nth-child(4) { width: 90px; }
+.gestionar-productos-table th:nth-child(5) { width: 80px; }
+.gestionar-productos-table th:nth-child(6) { width: 120px; }
+.gestionar-productos-table th:nth-child(7) { width: 110px; }
+.gestionar-productos-table th:nth-child(8) { width: 70px; }
+.gestionar-productos-table th:nth-child(9) { width: 90px; }
+.gp-empty {
+  text-align: center;
+  color: #888;
+  font-weight: 600;
+  font-size: 1.08rem;
+  min-width: 100%;
+  display: table-cell;
+}
+.gp-inactivo {
+  background: #f3f4f6;
+  color: #888;
+}
+.gestionar-productos-table td {
+  vertical-align: middle;
+}
+.gestionar-productos-btn.editar,
+.gestionar-productos-btn.eliminar,
+.gestionar-productos-btn.inactivar,
+.gestionar-productos-btn.activar {
+  margin-bottom: 0;
+  min-width: 36px;
+  min-height: 36px;
+  padding: 0.3rem 0.6rem;
+  font-size: 1rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+}
+.gestionar-productos-btn.editar { background: #fbbf24; color: #222; }
+.gestionar-productos-btn.eliminar { background: #e11d48; color: #fff; }
+.gestionar-productos-btn.inactivar { background: #64748b; color: #fff; }
+.gestionar-productos-btn.activar { background: #22c55e; color: #fff; }
+.gestionar-productos-btn + .gestionar-productos-btn {
+  margin-left: 0.2rem;
+}
+/* Modal centrado y mejorado */
+.gp-modal-bg {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(30,41,59,0.18);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gp-modal {
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 32px 0 rgba(30,41,59,0.18);
+  padding: 2.2rem 2.2rem 2rem 2.2rem;
+  min-width: 340px;
+  max-width: 95vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+.gp-modal h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+@media (max-width: 900px) {
+  .gestionar-productos-container {
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+  }
+  .gestionar-productos-table-wrapper {
+    padding: 0.7rem 0.2rem 0.7rem 0.2rem;
+  }
+  .gestionar-productos-bar {
+    flex-direction: column;
+    gap: 0.7rem;
+    max-width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .gestionar-productos-container {
+    padding: 0.5rem 0.1rem 0.5rem 0.1rem;
+  }
+  .gestionar-productos-title {
+    font-size: 1.2rem;
+  }
+  .gp-modal {
+    padding: 1.2rem 0.7rem;
+    min-width: 0;
+  }
+}

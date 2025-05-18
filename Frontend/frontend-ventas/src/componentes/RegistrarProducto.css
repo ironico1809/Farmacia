@@ -1,0 +1,205 @@
+/* RegistrarProducto.css - Estilos modernos y responsivos para el formulario de productos */
+
+.registrar-producto-container {
+  max-width: 700px;
+  margin: 2.5rem auto 0 auto;
+  background: #f8fafc;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 32px 0 rgba(30,41,59,0.10);
+  padding: 2.5rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.registrar-producto-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.registrar-producto-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.3rem 2.2rem;
+  background: #f8fafc;
+  border-radius: 0 0 8px 8px;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+}
+
+@media (max-width: 700px) {
+  .registrar-producto-form {
+    grid-template-columns: 1fr;
+    gap: 1.1rem 0;
+    padding: 1.2rem 0.7rem;
+  }
+  .registrar-producto-container {
+    padding: 1.2rem 0.7rem;
+  }
+}
+
+.registrar-producto-label {
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+.registrar-producto-input, .registrar-producto-select {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border-radius: 0.7rem;
+  border: 1.5px solid #cbd5e1;
+  background: #fff;
+  font-size: 1.08rem;
+  color: #334155;
+  transition: border 0.2s;
+  margin-bottom: 0.2rem;
+}
+.registrar-producto-input:focus, .registrar-producto-select:focus {
+  border: 1.5px solid #2563eb;
+  outline: none;
+}
+
+.registrar-producto-select {
+  appearance: none;
+  background: url('data:image/svg+xml;utf8,<svg fill="%232563eb" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/></svg>') no-repeat right 1rem center/1.2em;
+}
+
+.registrar-producto-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.2rem;
+  margin-top: 1.2rem;
+}
+
+.registrar-producto-btn {
+  padding: 0.85rem 2.2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 0.8rem;
+  border: none;
+  background: #199e8e;
+  color: #fff;
+  box-shadow: 0 2px 8px #c7d2fe;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.registrar-producto-btn:hover {
+  background: #157c6e;
+  box-shadow: 0 4px 16px #a5b4fc;
+}
+.registrar-producto-btn:disabled {
+  background: #b6e7c9;
+  color: #fff;
+  cursor: not-allowed;
+}
+
+/* Botón cancelar igual a venta-btn-cancelar */
+.registrar-producto-btn.cancelar {
+  background: #e5e7eb;
+  color: #222;
+}
+.registrar-producto-btn.cancelar:hover {
+  background: #cbd5e1;
+}
+
+.registrar-producto-alert {
+  grid-column: 1 / -1;
+  background: #fef9c3;
+  color: #b45309;
+  border-radius: 0.7rem;
+  padding: 0.8rem 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  border: 1.5px solid #fde68a;
+  text-align: center;
+}
+
+/* Mejoras para accesibilidad y UX */
+.registrar-producto-input[aria-invalid="true"], .registrar-producto-select[aria-invalid="true"] {
+  border: 1.5px solid #e11d48;
+  background: #fef2f2;
+}
+
+.registrar-producto-label[aria-required="true"]::after {
+  content: '*';
+  color: #e11d48;
+  margin-left: 0.2em;
+}
+
+/* Estilo para el buscador y botones superiores */
+.registrar-producto-buscar-row {
+  grid-column: 1/3;
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.registrar-producto-buscar-row .registrar-producto-btn {
+  min-width: 120px;
+}
+
+.registrar-producto-buscar-row span {
+  font-size: 0.98rem;
+  color: #888;
+  margin-left: 0.7rem;
+}
+
+.registrar-producto-switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+}
+.registrar-producto-switch input[type="checkbox"] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.registrar-producto-slider {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  background: #e5e7eb;
+  border-radius: 24px;
+  transition: background 0.2s;
+  display: inline-block;
+}
+.registrar-producto-slider:before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 1px 4px #cbd5e1;
+  transition: transform 0.2s;
+}
+.registrar-producto-switch input:checked + .registrar-producto-slider {
+  background: #22c55e;
+}
+.registrar-producto-switch input:checked + .registrar-producto-slider:before {
+  transform: translateX(20px);
+  background: #fff;
+}
+.registrar-producto-switch-label {
+  color: #334155;
+  font-size: 1.05rem;
+  margin-left: 0.2rem;
+}
+
+.registrar-producto-input-id {
+  max-width: 320px !important;
+  min-width: 220px;
+}

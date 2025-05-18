@@ -1,0 +1,280 @@
+/* GestionarUsuarios.css - Estilo profesional para gestión de usuarios */
+.gestionar-usuarios-container {
+  max-width: 1100px;
+  margin: 2.5rem auto 0 auto;
+  background: #f8fafc;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 32px 0 rgba(30,41,59,0.10);
+  padding: 2.5rem 2.5rem 2.5rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.2rem;
+}
+.gestionar-usuarios-container.card-efecto {
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.12);
+  border-radius: 1.5rem;
+  border: 1.5px solid #e0e7ef;
+  background: rgba(255,255,255,0.97);
+  transition: box-shadow 0.2s;
+}
+.gestionar-usuarios-container.card-efecto:hover {
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.18);
+}
+.gestionar-usuarios-title {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #a21caf;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 8px #f3e8ff;
+}
+.gestionar-usuarios-bar {
+  display: flex;
+  flex-direction: row;
+  gap: 1.2rem;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 1.5rem auto;
+}
+.gestionar-usuarios-input {
+  flex: 1;
+  min-width: 220px;
+  padding: 0.7rem 1rem;
+  border-radius: 0.7rem;
+  border: 1.5px solid #cbd5e1;
+  background: #fff;
+  font-size: 1.08rem;
+  color: #334155;
+  transition: border 0.2s;
+}
+.gestionar-usuarios-input:focus {
+  border: 1.5px solid #a21caf;
+  outline: none;
+}
+.gestionar-usuarios-btn {
+  padding: 0.7rem 1.7rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-radius: 0.7rem;
+  border: none;
+  background: #a21caf;
+  color: #fff;
+  box-shadow: 0 2px 8px #c7d2fe;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  margin-left: 0.5rem;
+}
+.gestionar-usuarios-btn:hover {
+  background: #7c1fa1;
+  box-shadow: 0 4px 16px #a5b4fc;
+}
+.gestionar-usuarios-btn.editar {
+  background: #fbbf24;
+  color: #222;
+  margin-right: 0.3rem;
+}
+.gestionar-usuarios-btn.eliminar {
+  background: #e11d48;
+  color: #fff;
+  margin-right: 0.3rem;
+}
+.gestionar-usuarios-btn.cancelar {
+  background: #e5e7eb;
+  color: #222;
+  margin-right: 0.5rem;
+}
+.gestionar-usuarios-btn.guardar {
+  background: #a21caf;
+  color: #fff;
+}
+.gestionar-usuarios-btn.editar,
+.gestionar-usuarios-btn.eliminar {
+  min-width: 28px;
+  min-height: 28px;
+  padding: 0.2rem 0.4rem;
+  font-size: 0.95rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+  margin-bottom: 0;
+}
+.gestionar-usuarios-btn.editar i,
+.gestionar-usuarios-btn.eliminar i {
+  font-size: 0.95rem;
+}
+.gestionar-usuarios-table-wrapper {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px #c7d2fe22;
+  padding: 1.5rem 1.2rem 1.5rem 1.2rem;
+  overflow-x: auto;
+  width: 100%;
+  max-width: 1000px;
+  min-width: 900px;
+  margin: 0 auto;
+}
+.gestionar-usuarios-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.04rem;
+  background: #fff;
+  margin: 0 auto;
+  table-layout: fixed;
+  min-width: 900px;
+}
+.gestionar-usuarios-table th, .gestionar-usuarios-table td {
+  border: 1px solid #e5e7eb;
+  padding: 0.7rem 0.7rem;
+  text-align: center;
+  font-size: 1.05rem;
+}
+.gestionar-usuarios-table th {
+  background: linear-gradient(90deg, #f3e8ff 60%, #ede9fe 100%);
+  color: #7c1fa1;
+  border-bottom: 2.5px solid #a21caf;
+  font-weight: 700;
+}
+.gestionar-usuarios-table th:nth-child(1) { width: 60px; }
+.gestionar-usuarios-table th:nth-child(2) { width: 140px; }
+.gestionar-usuarios-table th:nth-child(3) { width: 120px; }
+.gestionar-usuarios-table th:nth-child(4),
+.gestionar-usuarios-table td:nth-child(4) {
+  width: 140px;
+  min-width: 140px;
+  max-width: 180px;
+  word-break: break-word;
+}
+.gestionar-usuarios-table th:nth-child(5) { width: 110px; }
+.gestionar-usuarios-table th:nth-child(6) { width: 180px; }
+.gestionar-usuarios-table th:nth-child(7) { width: 80px; }
+.gestionar-usuarios-table th:nth-child(8) { width: 120px; }
+.gestionar-usuarios-table tr {
+  transition: background 0.18s;
+}
+.gestionar-usuarios-table tr:hover {
+  background: #f3e8ff44;
+}
+.gu-empty {
+  min-width: 100%;
+  display: table-cell;
+  color: #b0b0b0;
+  font-size: 1.08rem;
+  background: #f8fafc;
+}
+.gu-inactivo {
+  background: #f3f4f6 !important;
+  color: #888 !important;
+}
+.gu-alert {
+  padding: 0.8rem 1.2rem;
+  border-radius: 0.7rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
+.gu-alert-exito {
+  background: #f0fdf4;
+  color: #199e8e;
+  border: 1.5px solid #22c55e;
+}
+.gu-alert-error {
+  background: #fef2f2;
+  color: #e11d48;
+  border: 1.5px solid #e11d48;
+}
+.gu-alert.fade-in {
+  animation: fadeInAlert 0.7s cubic-bezier(.77,0,.18,1);
+}
+@keyframes fadeInAlert {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* Modal */
+.gu-modal-bg {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(30,41,59,0.18);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gu-modal {
+  background: #fff;
+  border: 1.5px solid #e0e7ef;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 32px 0 rgba(162,28,175,0.10);
+  padding: 2.2rem 2.2rem 2rem 2.2rem;
+  min-width: 340px;
+  max-width: 95vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+.gu-modal h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #7c1fa1;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+.gu-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  min-width: 260px;
+  max-width: 350px;
+}
+.gu-input {
+  padding: 0.7rem 1rem;
+  border-radius: 0.7rem;
+  border: 1.5px solid #cbd5e1;
+  background: #fff;
+  font-size: 1.08rem;
+  color: #334155;
+  transition: border 0.2s;
+}
+.gu-input:focus {
+  border: 1.5px solid #a21caf;
+  outline: none;
+}
+.gu-form-actions {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: flex-end;
+  margin-top: 1.2rem;
+}
+@media (max-width: 900px) {
+  .gestionar-usuarios-container {
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+  }
+  .gestionar-usuarios-table-wrapper {
+    padding: 0.7rem 0.2rem 0.7rem 0.2rem;
+    min-width: 0;
+  }
+  .gestionar-usuarios-bar {
+    flex-direction: column;
+    gap: 0.7rem;
+    max-width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .gestionar-usuarios-container {
+    padding: 0.5rem 0.1rem 0.5rem 0.1rem;
+  }
+  .gestionar-usuarios-title {
+    font-size: 1.2rem;
+  }
+  .gu-modal {
+    padding: 1.2rem 0.7rem;
+    min-width: 0;
+  }
+}

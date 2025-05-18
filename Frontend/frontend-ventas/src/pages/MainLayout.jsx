@@ -5,6 +5,9 @@ import Sidebar from '../componentes/Sidebar';
 import Navbar from '../componentes/Navbar';
 import DashboardMain from './DashboardMain';
 import RegistrarVenta from './RegistrarVenta';
+import RegistrarProducto from './RegistrarProducto';
+import GestionarProductos from './GestionarProductos';
+import GestionarUsuarios from './GestionarUsuarios';
 import '../App.css';
 
 const MainLayout = () => {
@@ -21,6 +24,9 @@ const MainLayout = () => {
         <Navbar onToggleSidebar={handleToggleSidebar} />
         <Routes>
           <Route path="/ventas" element={<RegistrarVenta />} />
+          <Route path="/inventario/registrar-producto" element={<RegistrarProducto />} />
+          <Route path="/inventario/gestionar-productos" element={<GestionarProductos />} />
+          <Route path="/administracion/gestionar-usuarios" element={<GestionarUsuarios />} />
           <Route path="*" element={<DashboardMain />} />
         </Routes>
       </div>

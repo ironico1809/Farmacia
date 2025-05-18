@@ -1,0 +1,111 @@
+/* OlvideContrasena.css - Estilo moderno y profesional para la página de recuperación */
+
+.olvide-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: linear-gradient(135deg, #e0f2fe 0%, #f0fdf4 100%);
+  padding: 0 0 2rem 0;
+}
+.olvide-title {
+  margin-top: 2.5rem;
+  color: #199e8e;
+  letter-spacing: 1px;
+  font-size: 2.1rem;
+  font-weight: 800;
+  text-align: center;
+}
+.olvide-card {
+  margin-top: 1.5rem;
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 32px 0 rgba(30,41,59,0.10);
+  max-width: 410px;
+  width: 100%;
+  padding: 2.2rem 2.2rem 2rem 2.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.5s;
+}
+.olvide-icon {
+  font-size: 2.7rem;
+  margin-bottom: 0.7rem;
+  color: #2563eb;
+}
+.olvide-card-title {
+  font-weight: 700;
+  font-size: 1.18rem;
+  margin-bottom: 0.3rem;
+  color: #222;
+  text-align: center;
+}
+.olvide-card-desc {
+  color: #444;
+  font-size: 1.01rem;
+  margin-bottom: 0.7rem;
+  text-align: center;
+}
+.olvide-input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border-radius: 0.7rem;
+  border: 1.5px solid #cbd5e1;
+  background: #f8fafc;
+  font-size: 1.08rem;
+  color: #334155;
+  margin-bottom: 1.1rem;
+  transition: border 0.2s;
+}
+.olvide-input:focus {
+  border: 1.5px solid #2563eb;
+  outline: none;
+}
+.olvide-btn {
+  width: 100%;
+  padding: 0.85rem 2.2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 0.8rem;
+  border: none;
+  background: #2563eb;
+  color: #fff;
+  box-shadow: 0 2px 8px #c7d2fe;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  margin-bottom: 0.7rem;
+}
+.olvide-btn:hover {
+  background: #199e8e;
+  box-shadow: 0 4px 16px #a5b4fc;
+}
+.olvide-alert {
+  background: #fef9c3;
+  color: #b45309;
+  border-radius: 0.7rem;
+  padding: 0.8rem 1.2rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  border: 1.5px solid #fde68a;
+  text-align: center;
+}
+.olvide-link {
+  color: #2563eb;
+  font-size: 0.98rem;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-top: 1.1rem;
+  display: block;
+  text-align: center;
+}
+@media (max-width: 600px) {
+  .olvide-card {
+    padding: 1.2rem 0.7rem;
+    max-width: 98vw;
+  }
+  .olvide-title {
+    font-size: 1.3rem;
+  }
+}

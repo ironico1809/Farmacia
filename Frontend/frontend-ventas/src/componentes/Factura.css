@@ -1,0 +1,142 @@
+/* Factura.css - Estilo profesional y coherente con MainLayout */
+.factura-container.card-efecto {
+  max-width: 700px;
+  margin: 2.5rem auto 0 auto;
+  background: #f8fafc;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.12);
+  border: 1.5px solid #e0e7ef;
+  padding: 2.5rem 2.5rem 2.5rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.2rem;
+}
+.factura-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #2563eb;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 8px #e0e7ff;
+}
+.factura-form-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.factura-form-group {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px #c7d2fe22;
+  padding: 1.2rem 1.2rem 1.2rem 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.factura-form-group label {
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 0.5rem;
+  display: block;
+  font-size: 1.08rem;
+}
+.factura-input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border-radius: 0.7rem;
+  border: 1.5px solid #cbd5e1;
+  background: #f8fafc;
+  font-size: 1.08rem;
+  color: #334155;
+  margin-top: 0.3rem;
+  margin-bottom: 0.7rem;
+  transition: border 0.2s;
+}
+.factura-input:focus {
+  border: 1.5px solid #2563eb;
+  outline: none;
+}
+.factura-cliente-datos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 1.2rem;
+  font-size: 1.05rem;
+  color: #334155;
+}
+@media (max-width: 600px) {
+  .factura-cliente-datos {
+    grid-template-columns: 1fr;
+  }
+}
+.factura-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.01rem;
+  background: #fff;
+  margin: 0 auto;
+  margin-top: 0.5rem;
+}
+.factura-table th, .factura-table td {
+  border: 1px solid #e5e7eb;
+  padding: 0.6rem 0.7rem;
+  text-align: left;
+}
+.factura-table th {
+  background: #e0e7ff;
+  font-weight: 700;
+  color: #2563eb;
+  font-size: 1.07rem;
+}
+.factura-table tfoot td {
+  background: #f3f6fa;
+  font-weight: 700;
+  color: #199e8e;
+}
+.factura-alert {
+  padding: 0.8rem 1.2rem;
+  border-radius: 0.7rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  text-align: center;
+  font-size: 1.08rem;
+}
+.factura-alert-exito {
+  background: #f0fdf4;
+  color: #199e8e;
+  border: 1.5px solid #22c55e;
+}
+.factura-alert-error {
+  background: #fef2f2;
+  color: #e11d48;
+  border: 1.5px solid #e11d48;
+}
+.factura-btns-row {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: flex-end;
+  margin-top: 1.2rem;
+}
+.factura-btn {
+  padding: 0.7rem 2.2rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-radius: 0.7rem;
+  border: none;
+  background: #2563eb;
+  color: #fff;
+  box-shadow: 0 2px 8px #c7d2fe;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.factura-btn:hover {
+  background: #199e8e;
+  box-shadow: 0 4px 16px #a5b4fc;
+}
+.factura-btn.emitir {
+  background: #22c55e;
+  color: #fff;
+}
+.factura-btn.emitir:hover {
+  background: #16a34a;
+}

@@ -1,6 +1,7 @@
 import Button from "../componentes/Button";
 import { useState, useEffect } from "react";
 import "../componentes/RegistrarVenta.css";
+import Factura from './Factura';
 
 const RegistrarVenta = () => {
   const [cliente, setCliente] = useState("");
@@ -14,6 +15,9 @@ const RegistrarVenta = () => {
   const [metodoPago, setMetodoPago] = useState("efectivo");
   const [requiereFactura, setRequiereFactura] = useState(false);
   const [tieneReceta, setTieneReceta] = useState(false);
+  const [mostrarFactura, setMostrarFactura] = useState(false);
+  const [ventaGenerada, setVentaGenerada] = useState(null);
+  const [clienteGenerado, setClienteGenerado] = useState(null);
 
   useEffect(() => {
     setClientes([
@@ -92,19 +96,30 @@ const RegistrarVenta = () => {
       mostrarAlerta("Debe agregar al menos un producto", "warning");
       return;
     }
-    mostrarAlerta("Venta registrada correctamente", "success");
-    setCliente("");
-    setProductosSeleccionados([]);
-    setProductoActual("");
-    setCantidad(1);
-    setMetodoPago("efectivo");
-    setRequiereFactura(false);
-    setTieneReceta(false);
+    // Buscar cliente por nombre o documento (más robusto)
+    let clienteObj = clientes.find(c =>
+      cliente === `${c.nombre} - ${c.documento}` ||
+      cliente === c.nombre ||
+      cliente === c.documento ||
+      c.nombre.toLowerCase().includes(cliente.toLowerCase()) ||
+      c.documento.includes(cliente)
+    );
+    if (!clienteObj) {
+      // Si no se encuentra, crear uno básico para evitar pantalla en blanco
+      clienteObj = { nombre: cliente, documento: '', telefono: '', direccion: '' };
+    }
+    setVentaGenerada({ productos: productosSeleccionados, total: calcularTotal(), fecha: new Date().toLocaleString() });
+    setClienteGenerado(clienteObj);
+    setMostrarFactura(true);
   };
 
   const calcularTotal = () => {
     return productosSeleccionados.reduce((total, p) => total + p.subtotal, 0).toFixed(2);
   };
+
+  if (mostrarFactura) {
+    return <Factura venta={ventaGenerada} cliente={clienteGenerado} onVolver={() => setMostrarFactura(false)} />;
+  }
 
   return (
     <div className="venta-container venta-container-encuadre">

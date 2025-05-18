@@ -17,6 +17,14 @@ const Login = () => {
     }, 500); // Duración de la animación
   };
 
+  const handleCrearCuenta = (e) => {
+    e.preventDefault();
+    setIsLeaving(true);
+    setTimeout(() => {
+      navigate('/registro-usuario');
+    }, 400);
+  };
+
   return (
     <div className={`login-container${isLeaving ? ' login-leave' : ''}`}>
       <div className="login-illustration">
@@ -37,11 +45,11 @@ const Login = () => {
             <input type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="" />
           </div>
           <div className="login-links-row">
-            <a href="#" className="login-link">Recuperar contraseña</a>
-            <a href="#" className="login-link">Crear cuenta</a>
+            <a href="#" className="login-link" onClick={e => {e.preventDefault(); navigate('/olvide-contrasena')}}>Recuperar contraseña</a>
+            <a href="#" className="login-link" onClick={handleCrearCuenta}>Crear cuenta</a>
           </div>
           <button className="login-btn" type="submit">INICIAR SESIÓN</button>
-        </form>
+        </form>      
       </div>
     </div>
   );
